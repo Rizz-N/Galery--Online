@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+:root{
+    --primary: #535353;
+    --secondary: #bdbdbd;
+    --danger: #a30340;
+    --succes: #8ACCD5;
+    --text: #e4e4e4;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "poppins", sans-serif;
+    overflow-x: hidden;
+}
+.navbar{
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    padding: 20px 0;
+    border-bottom: 4px solid var(--secondary);
+    z-index: 1000;
+}
+.navbar .navitem{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar .navitem a{
+    font-size: 30px;
+    color: var(--text);
+}
+
+.navbar .navitem .logo{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 10px;
+    left: 40%;
+    /* background-image: url(image/Maison\ rose.png); */
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--primary);
+    height: 150px;
+    width: 300px;
+    border: 4px solid var(--secondary);
+    padding: 0 20px;
+    height: 100px;
+    border-radius: 30px;
+}
+.navbar .navitem .logo a{
+    color: var(--text);
+    font-size: 40px;
+    font-family: "lobster", sans-serif;
+    margin: 20px 50px;
+}
+.hero{
+    background-image: url(image/museum.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin-top: 20px;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 100px;
+    position: relative;
+}
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgb(255, 255, 255), rgba(255, 255, 255,0)25%);
+}
+.hero p{
+    font-size: 30px;
+    color: var(--text);
+    text-shadow:0 0 10px var(--primary), 
+                0 0 10px var(--primary), 
+                0 0 10px var(--primary);
+}
+.hero h1{
+    font-size: 60px;
+    color: var(--text);
+    text-shadow:1px 1px 0 var(--primary),
+                2px 2px 0 var(--primary),
+                3px 3px 0 var(--primary);
+}
+.hero h5{
+    font-size: 30px;
+    color: var(--text);
+    text-shadow:0 0 10px var(--primary),
+                0 0 10px var(--primary), 
+                0 0 10px var(--primary);
+}
+.hook{
+    margin: 40px 20px;
+}
+
+.galery {
+    column-count: 5;
+    column-gap: 15px;
+    padding: 10px;
+    background: var(--primary);
+  }
+  
+  .galery .item {
+    margin-bottom: 15px; /* Jarak antar item */
+    break-inside: avoid; /* Supaya gambar tidak patah di tengah kolom */
+  }
+  
+  .galery .item img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  footer{
+    text-align: center;
+    background: var(--primary);
+    padding: 10px;
+  }
+  footer p{
+    color: var(--text);
+  }
+
+
+  .aboutus {
+    width: 100vw;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .aboutus .scroll {
+    display: inline-flex;
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .aboutus.paused .scroll {
+    animation-play-state: paused;
+  }
+  
+  .aboutus .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px 40px;
+    gap: 10px;
+    background: var(--primary);
+    border: 4px solid var(--secondary);
+    width: 200px;
+    height: 100px;
+    border-radius: 30px 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .aboutus .card h2 {
+    font-size: 15px;
+    color: var(--text);
+  }
+  
+  /* Animasi scroll ke kiri */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* karena kita akan clone isi scroll */
+    }
+  }
+  
+  /* Hover zoom */
+  .aboutus .card:hover {
+    transform: scale(1.1);
+  }
