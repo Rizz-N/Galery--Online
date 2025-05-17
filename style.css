@@ -323,7 +323,7 @@ body{
     gap: 8px;
     width: 120px;
     height: auto;
-    border-radius: 20px;
+    border-radius: 20px 10px;
   }
 
   .aboutus .card h2,
@@ -372,5 +372,14 @@ body{
 
   .hook p {
     font-size: 13px;
+  }
+
+   .aboutus .card {
+    padding: 10px;
+    margin: 0 10px;
+    gap: 8px;
+    width: 120px;
+    height: auto;
+    border-radius: 20px 10px;
   }
 }
