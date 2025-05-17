@@ -108,6 +108,10 @@ body{
     margin: 40px 20px;
 }
 
+.hook p{
+  font-size: 30px;
+}
+
 .galery {
     column-count: 5;
     column-gap: 15px;
@@ -125,6 +129,9 @@ body{
     display: block;
     border-radius: 8px;
     object-fit: cover;
+  }
+  .galery .item img:hover{
+    cursor: pointer;
   }
   footer{
     text-align: center;
@@ -174,16 +181,32 @@ body{
   
   .aboutus .card h2 {
     font-size: 15px;
+    text-align: center;
+    color: var(--text);
+  }
+
+  .aboutus .card p {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
     color: var(--text);
   }
   
-  /* Animasi scroll ke kiri */
+  #scroll {
+  display: flex;
+  animation: scroll-left 50s linear infinite;
+}
+
+.paused #scroll {
+  animation-play-state: paused;
+}
+
   @keyframes scroll-left {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%); /* karena kita akan clone isi scroll */
+      transform: translateX(-50%);
     }
   }
   
@@ -191,3 +214,44 @@ body{
   .aboutus .card:hover {
     transform: scale(1.1);
   }
+
+  /* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+/* Cegah scroll saat modal aktif */
+.no-scroll {
+  overflow: hidden;
+}
