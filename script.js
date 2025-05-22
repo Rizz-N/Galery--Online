@@ -54,10 +54,12 @@ async function loadGallery() {
         modalImg.src = e.target.src;
         document.body.classList.add("no-scroll");
 
-        const src = e.target.src;
-    const match = src.match(/\/files\/(.*?)\/view/);
+        window.history.pushState({ modalOpen: true }, "", "#modal");
 
-    if (match && match[1]) {
+        const src = e.target.src;
+      const match = src.match(/\/files\/(.*?)\/view/);
+
+      if (match && match[1]) {
       const fileId = match[1];
 
       // Cari nama file dari allFiles
@@ -79,11 +81,22 @@ async function loadGallery() {
           }
         });
 
+        window.addEventListener('popstate', (event) => {
+        if (modal.style.display === "block") {
+          modal.style.display = "none";
+          document.body.classList.remove("no-scroll");
+        }
+        });
+
    
 
     closeBtn.onclick = () => {
       modal.style.display = "none";
       document.body.classList.remove("no-scroll");
+
+      if(window.location.hash === "#modal") {
+      window.history.back();
+  }
     };
 
       if (!result.nextCursor) break;
@@ -97,6 +110,10 @@ async function loadGallery() {
   }
 }
 loadGallery();
+
+    if(window.location.hash === "#modal") {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
 
 async function downloadFile(fileId, fileName) {
   const url = `https://fra.cloud.appwrite.io/v1/storage/buckets/${bucketId}/files/${fileId}/download?project=${projectId}`;

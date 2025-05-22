@@ -362,6 +362,20 @@ body{
   .aboutus .card p {
     font-size: 12px;
   }
+
+  .close {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1002;
+    background: rgba(0,0,0,0.5);
+    padding: 10px !important;
+  }
+  
+  .close img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* Untuk layar maksimum 430px */
