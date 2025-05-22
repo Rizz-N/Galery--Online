@@ -7,7 +7,7 @@
     --primary: #535353;
     --secondary: #bdbdbd;
     --danger: #a30340;
-    --succes: #8ACCD5;
+    --succes: #ff0000;
     --text: #e4e4e4;
 }
 html{
@@ -34,6 +34,19 @@ body{
 .navbar .navitem a{
     font-size: 30px;
     color: var(--text);
+}
+
+.navbar .navitem a:not(.logo):after{
+  content: "";
+  display: block;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;
+}
+.navbar .navitem a:not(.logo):hover:after{
+  width: 80%;
 }
 
 .navbar .navitem .logo{
@@ -212,7 +225,7 @@ body{
   display: none;
   position: fixed;
   z-index: 1001;
-  padding-top: 60px;
+  padding-top: 90px;
   left: 0;
   top: 0;
   width: 100vw;
@@ -233,19 +246,48 @@ body{
   position: absolute;
   top: 30px;
   left: 35px;
-  color: #fff;
-  background: var(--primary);
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  padding: 0 15px;
-  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .close:hover {
-  color: #bbb;
+  background: var(--succes);
 }
 
+.download {
+  position: absolute;
+  bottom: 110px;
+  right: 35px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background: var(--secondary);
+  align-items: center;
+}
+.download img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.download:hover {
+  background: var(--succes);
+}
 /* Cegah scroll saat modal aktif */
 .no-scroll {
   overflow: hidden;
@@ -273,7 +315,8 @@ body{
   }
 
   .hero {
-    height: 50vh;
+    height: 40vh;
+    width: 100vw;
     margin-top: 20px;
     padding-left: 10px;
     position: relative;
@@ -304,17 +347,6 @@ body{
     column-gap: 15px;
     padding: 10px;
     background: var(--primary);
-  }
-
-  .close {
-    position: absolute;
-    top: 30px;
-    left: 10px;
-    font-size: 30px;
-  }
-
-  .modal {
-    padding-top: 30%;
   }
 
   .aboutus .card {
