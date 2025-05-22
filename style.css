@@ -376,6 +376,21 @@ body{
     width: 30px;
     height: 30px;
   }
+
+  .modal-content {
+  max-width: 90%;
+  max-height: 60vh;
+}
+
+.download {
+  right: 20px;
+  bottom: 13rem;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+}
 }
 
 /* Untuk layar maksimum 430px */
