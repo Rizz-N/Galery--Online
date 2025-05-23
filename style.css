@@ -79,7 +79,8 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: relative;
 }
 .hero::after{
@@ -160,6 +161,7 @@ body{
     padding: 10px;
     margin-top: 10px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -171,7 +173,6 @@ body{
     min-width: 100%;
     will-change: transform;
     display: inline-flex;
-    animation: scroll-left 20s linear infinite;
   }
   
   .aboutus.paused .scroll {
@@ -179,6 +180,7 @@ body{
   }
   
   .aboutus .card {
+  width: clamp(220px, 30vw, 300px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -333,8 +335,9 @@ body{
     padding: 15px 40px;
     font-size: 20px;
   }
-
   .hero {
+    padding-left: 10px;
+    padding-right: 10px;
     height: 40vh;
     width: 100%;
     margin-top: 20px;
