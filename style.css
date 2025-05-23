@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    outline: 1px solid var(--danger);
 }
 :root{
     --primary: #535353;
@@ -275,6 +274,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .close img{
@@ -343,6 +343,7 @@ body{
     margin-top: 20px;
     padding-left: 10px;
     position: relative;
+    overflow-x: hidden !important;
   }
 
   .hero p {
@@ -370,6 +371,10 @@ body{
     column-gap: 15px;
     padding: 10px;
     background: var(--primary);
+  }
+  .aboutus {
+    overflow-x: hidden !important;
+    width: 100vw;
   }
 
   .aboutus .card {
