@@ -151,16 +151,31 @@ async function downloadFile(fileId, fileName) {
 }
 
 
-// Auto scroll "About Us"
+// Perbaiki script.js bagian scroll
+// Ganti kode duplikasi card dengan ini:
 const scrollContainer = document.getElementById('scroll');
-const aboutusContainer = document.getElementById('about');
-
-// Duplicate card biar infinite scroll
 const cards = Array.from(scrollContainer.children);
-cards.forEach(card => {
-  const clone = card.cloneNode(true);
-  scrollContainer.appendChild(clone);
+
+// Hapus semua child terlebih dahulu
+while (scrollContainer.firstChild) {
+  scrollContainer.removeChild(scrollContainer.firstChild);
+}
+
+// Duplikasi 5x untuk buffer lebih banyak
+const duplicateTimes = 5;
+Array.from({length: duplicateTimes}).forEach(() => {
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    scrollContainer.appendChild(clone);
+  });
 });
+
+// Hitung ulang scroll width setelah render
+setTimeout(() => {
+  const totalWidth = scrollContainer.scrollWidth / duplicateTimes;
+  scrollContainer.style.setProperty('--scroll-width', `${totalWidth}px`);
+  scrollContainer.style.animationDuration = `${totalWidth / 50}px`; // 50px/detik
+}, 500);
 
 // Pause saat hover
 aboutusContainer.addEventListener('mouseenter', () => {
