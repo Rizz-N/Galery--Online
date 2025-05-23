@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    box-sizing: border-box;
 }
 :root{
     --primary: #535353;
@@ -371,7 +372,14 @@ body{
     column-gap: 15px;
     padding: 10px;
     background: var(--primary);
+    width: 100vw; /* Pastikan lebar sesuai viewport */
+    padding: 10px 5px; /* Kurangi padding samping */
   }
+   
+    .galery .item {
+        margin-bottom: 20px;
+    }
+  
   .aboutus {
     overflow-x: hidden !important;
     width: 100vw;
