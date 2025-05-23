@@ -178,7 +178,7 @@ setTimeout(() => {
 }, 500);
 
 // Pause saat hover
-aboutusContainer.addEventListener('mouseenter', () => {
+  aboutusContainer.addEventListener('mouseenter', () => {
   aboutusContainer.classList.add('paused');
 });
 aboutusContainer.addEventListener('mouseleave', () => {

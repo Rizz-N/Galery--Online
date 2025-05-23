@@ -236,11 +236,6 @@ body{
       transform: translateX(calc(-1 * var(--scroll-width)));
     }
   }
-  
-  /* Hover zoom */
-  .aboutus .card:hover {
-    transform: scale(1.1);
-  }
 
   /* Modal Styles */
 .modal {
