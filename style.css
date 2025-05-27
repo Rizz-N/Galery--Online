@@ -135,7 +135,7 @@ body{
   }
   
   .galery .item {
-    margin-bottom: 15px; /* Jarak antar item */
+    margin-bottom: 30px; /* Jarak antar item */
     break-inside: avoid; /* Supaya gambar tidak patah di tengah kolom */
   }
   
@@ -147,18 +147,36 @@ body{
   }
   .galery .item img:hover{
     cursor: pointer;
+    filter: brightness(50%);
   }
   footer{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: var(--primary);
-    padding: 10px;
+    padding: 0 80px;
   }
-  footer p{
+  footer h1{
     color: var(--text);
-    font-size: 20px;
+    font-size: 3rem;
     font-family: "Poppins", sans-serif;
   }
-
+  footer h3{
+    color: var(--text);
+    font-size: 2rem;
+    font-family: "Poppins",sans-serif;
+  }
+  .socials h2{
+    color: var(--text);
+    font-size: 1.8rem;
+    font-family: "Poppins",sans-serif;
+    text-align: end;
+  }
+  .socials .icon{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
 
   .aboutus {
     max-width: 100%;
@@ -424,6 +442,23 @@ body{
     100% {
       transform: translateX(calc(-100% - 10px));
     }
+  }
+
+  footer{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+  }
+  footer h1{
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  footer h3{
+    font-size: 1rem;
+    text-align: center;
+  }
+  .socials h2{
+    text-align: center;
   }
 }
 

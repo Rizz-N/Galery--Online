@@ -122,8 +122,7 @@ async function downloadFile(fileId, fileName) {
     // Fetch file sebagai Blob
     const response = await fetch(url, {
       headers: {
-        // Jika butuh autentikasi token, tambahkan di sini
-        // 'Authorization': 'Bearer <your-token>',
+      
       }
     });
 
@@ -134,14 +133,12 @@ async function downloadFile(fileId, fileName) {
     // Buat URL blob untuk download
     const blobUrl = URL.createObjectURL(blob);
 
-    // Buat elemen <a> dan trigger download
     const a = document.createElement('a');
     a.href = blobUrl;
     a.download = fileName || 'downloaded_file';
     document.body.appendChild(a);
     a.click();
 
-    // Hapus elemen dan revoke URL
     a.remove();
     URL.revokeObjectURL(blobUrl);
   } catch (error) {
@@ -151,17 +148,15 @@ async function downloadFile(fileId, fileName) {
 }
 
 
-// Perbaiki script.js bagian scroll
-// Ganti kode duplikasi card dengan ini:
 const scrollContainer = document.getElementById('scroll');
 const cards = Array.from(scrollContainer.children);
 
-// Hapus semua child terlebih dahulu
+
 while (scrollContainer.firstChild) {
   scrollContainer.removeChild(scrollContainer.firstChild);
 }
 
-// Duplikasi 5x untuk buffer lebih banyak
+
 const duplicateTimes = 5;
 Array.from({length: duplicateTimes}).forEach(() => {
   cards.forEach(card => {
@@ -170,17 +165,9 @@ Array.from({length: duplicateTimes}).forEach(() => {
   });
 });
 
-// Hitung ulang scroll width setelah render
+
 setTimeout(() => {
   const totalWidth = scrollContainer.scrollWidth / duplicateTimes;
   scrollContainer.style.setProperty('--scroll-width', `${totalWidth}px`);
   scrollContainer.style.animationDuration = `${totalWidth / 50}px`; // 50px/detik
 }, 500);
-
-// Pause saat hover
-  aboutusContainer.addEventListener('mouseenter', () => {
-  aboutusContainer.classList.add('paused');
-});
-aboutusContainer.addEventListener('mouseleave', () => {
-  aboutusContainer.classList.remove('paused');
-});
